@@ -69,9 +69,16 @@ public class EmployeeServiceImpl implements EmployeeService
         return employee;
     }
 
+    /**
+     * 新增员工
+     *
+     * @param employeeDTO
+     */
     @Override
     public void save(EmployeeDTO employeeDTO) {
-        final Employee employee = new Employee();
+        Employee employee = new Employee();
+
+        //对象属性拷贝
         BeanUtils.copyProperties(employeeDTO, employee);
 
         //设置账号的状态，默认正常状态 1表示正常 0表示锁定
@@ -100,14 +107,16 @@ public class EmployeeServiceImpl implements EmployeeService
      */
     @Override
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
+        // select * from employee limit 0,10
+        //开始分页查询
         PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
 
         Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
 
-        final long total = page.getTotal();
-        final List<Employee> result = page.getResult();
+        long total = page.getTotal();
+        List<Employee> records = page.getResult();
 
-        return new PageResult(total, result);
+        return new PageResult(total, records);
     }
 
     /**
@@ -123,6 +132,7 @@ public class EmployeeServiceImpl implements EmployeeService
                 .status(status)
                 .id(id)
                 .build();
+
         employeeMapper.update(employee);
     }
 
@@ -154,4 +164,5 @@ public class EmployeeServiceImpl implements EmployeeService
 
         employeeMapper.update(employee);
     }
+
 }
