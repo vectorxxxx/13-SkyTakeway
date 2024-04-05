@@ -19,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 @Slf4j
-public class JwtTokenAdminInterceptor implements HandlerInterceptor {
+public class JwtTokenAdminInterceptor implements HandlerInterceptor
+{
 
     @Autowired
     private JwtProperties jwtProperties;
@@ -33,6 +34,7 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
      * @return
      * @throws Exception
      */
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //判断当前拦截到的是Controller的方法还是其他资源
         if (!(handler instanceof HandlerMethod)) {
@@ -50,14 +52,15 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             Long empId = Long.valueOf(claims
                     .get(JwtClaimsConstant.EMP_ID)
                     .toString());
-            log.info("当前员工id：", empId);
+            log.info("当前员工id：{}", empId);
 
             // 将用户id存储到ThreadLocal
             BaseContext.setCurrentId(empId);
-            
+
             //3、通过，放行
             return true;
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             //4、不通过，响应401状态码
             response.setStatus(401);
             return false;

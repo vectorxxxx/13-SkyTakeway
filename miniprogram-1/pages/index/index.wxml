@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view>{{msg}}</view>
+    <view>
+      <button type="default" bindtap="getUserInfo">获取用户信息</button>
+      <image style="width: 100px; height: 100px;" src="{{avatarUrl}}"></image>
+      {{nickName}}
+    </view>
+    <view>
+      <button type="primary" bindtap="wxlogin">微信登录</button>
+      授权码：{{code}}
+    </view>
+    <view>
+      <button type="warn" bindtap="sendRequest">发送请求</button>
+      响应结果：{{result}}
+    </view>
+  </view>
+</scroll-view>

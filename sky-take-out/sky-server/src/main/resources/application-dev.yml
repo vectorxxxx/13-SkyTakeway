@@ -6,13 +6,19 @@ sky:
     database: sky_take_out
     username: root
     password: root
+  # OSS
   alioss:
     endpoint: oss-cn-shanghai.aliyuncs.com
     access-key-id: LTAI5tAVwqJjAcYyMTDd8GUp
     access-key-secret: CqTyhiFyPViIK0otPrCzpmDpI0ghKG
     bucket-name: skytakeway-vectorx
+  # Redis
   redis:
     host: localhost
     port: 6379
     password: 123456
     database: 10
+  # 微信小程序
+  wechat:
+    appid: wx8d2b03f39d351d82
+    secret: 92864c11a2907cb30372b871370f924a

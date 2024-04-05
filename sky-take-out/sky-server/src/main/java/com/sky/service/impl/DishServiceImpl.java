@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author VectorX
@@ -40,6 +41,29 @@ public class DishServiceImpl implements DishService
     private DishFlavorMapper dishFlavorMapper;
     @Autowired
     private SetmealDishMapper setmealDishMapper;
+
+    /**
+     * 条件查询菜品和口味
+     *
+     * @param dish
+     * @return
+     */
+    @Override
+    public List<DishVO> listWithFlavor(Dish dish) {
+        return dishMapper
+                .list(dish)
+                .stream()
+                .map(d -> {
+                    DishVO dishVO = new DishVO();
+                    BeanUtils.copyProperties(d, dishVO);
+
+                    //根据菜品id查询对应的口味
+                    dishVO.setFlavors(dishFlavorMapper.getByDishId(d.getId()));
+
+                    return dishVO;
+                })
+                .collect(Collectors.toList());
+    }
 
     /**
      * 根据分类id查询菜品
