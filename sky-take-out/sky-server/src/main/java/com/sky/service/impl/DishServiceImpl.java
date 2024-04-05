@@ -42,6 +42,22 @@ public class DishServiceImpl implements DishService
     private SetmealDishMapper setmealDishMapper;
 
     /**
+     * 根据分类id查询菜品
+     *
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish
+                .builder()
+                .categoryId(categoryId)
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.list(dish);
+    }
+
+    /**
      * 根据id修改菜品基本信息和对应的口味信息
      *
      * @param dishDTO
