@@ -43,6 +43,22 @@ public class DishServiceImpl implements DishService
     private SetmealDishMapper setmealDishMapper;
 
     /**
+     * 菜品起售、停售
+     *
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        final Dish dish = Dish
+                .builder()
+                .id(id)
+                .status(status)
+                .build();
+        dishMapper.update(dish);
+    }
+
+    /**
      * 条件查询菜品和口味
      *
      * @param dish
