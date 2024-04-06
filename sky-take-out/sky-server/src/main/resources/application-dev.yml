@@ -33,3 +33,8 @@ sky:
     #    weChatPayCertFilePath: D:\workspace-mine\13-SkyTakeway\sky-take-out\sky-server\src\main\resources\pem\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
     #    notifyUrl: https://www.weixin.qq.com/wxpay/pay.php
     #    refundNotifyUrl: https://www.weixin.qq.com/wxpay/pay.php
+  # 配送范围
+  shop:
+    address: 北京市市辖区西城区什刹海街道
+  baidu:
+    ak: zqr4tB8cZlg3zBcrANFCsvRze3YDADy3
