@@ -4,7 +4,7 @@
 
 #### 1.1、登录
 
-![image-20240406211853401](C:\Users\uxiah\AppData\Roaming\Typora\typora-user-images\image-20240406211853401.png)
+![image-20240406211853401](https://s2.loli.net/2024/04/06/C4xfUIJEaNKbv3r.png)
 
 #### 1.2、工作台
 
