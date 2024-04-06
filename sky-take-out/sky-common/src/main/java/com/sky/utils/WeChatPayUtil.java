@@ -53,9 +53,9 @@ public class WeChatPayUtil {
         PrivateKey merchantPrivateKey = null;
         try {
             //merchantPrivateKey商户API私钥，如何加载商户API私钥请看常见问题
-            merchantPrivateKey = PemUtil.loadPrivateKey(new FileInputStream(new File(weChatProperties.getPrivateKeyFilePath())));
+            merchantPrivateKey = PemUtil.loadPrivateKey(new FileInputStream(weChatProperties.getPrivateKeyFilePath()));
             //加载平台证书文件
-            X509Certificate x509Certificate = PemUtil.loadCertificate(new FileInputStream(new File(weChatProperties.getWeChatPayCertFilePath())));
+            X509Certificate x509Certificate = PemUtil.loadCertificate(new FileInputStream(weChatProperties.getWeChatPayCertFilePath()));
             //wechatPayCertificates微信支付平台证书列表。你也可以使用后面章节提到的“定时更新平台证书功能”，而不需要关心平台证书的来龙去脉
             List<X509Certificate> wechatPayCertificates = Arrays.asList(x509Certificate);
 

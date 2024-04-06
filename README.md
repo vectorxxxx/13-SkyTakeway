@@ -75,3 +75,19 @@ node vendors\server\app.js
 ![image-20240403210848837](https://s2.loli.net/2024/04/03/FV32zcaCnL9uy1R.png)
 
 ![image-20240403210902880](https://s2.loli.net/2024/04/03/J98nTw3Gsc24oDX.png)
+
+
+
+## 2、Cpolar(内网穿透)
+
+```bash
+D:
+cd D:\Program\cpolar
+
+# 指定authtoken
+cpolar.exe authtoken ZWI2YzBiYWYtYjVmYi00NmMwLWJkNGQtMmI5NTk3ZTkyMDBk
+
+# 获取临时域名
+cpolar
+```
+

@@ -20,5 +20,16 @@ sky:
     database: 10
   # 微信小程序
   wechat:
+    # 登录相关
     appid: wx8d2b03f39d351d82
     secret: 92864c11a2907cb30372b871370f924a
+    # 支付相关
+    #    appid: wxcd2e39f677fd30ba
+    #    secret: 84fbfdf5ea288f0c432d829599083637
+    #    mchid: 1561414331
+    #    mchSerialNo: 4B3B3DC35414AD50B1B755BAF8DE9CC7CF407606
+    #    privateKeyFilePath: D:\workspace-mine\13-SkyTakeway\sky-take-out\sky-server\src\main\resources\pem\apiclient_key.pem
+    #    apiV3Key: CZBK51236435wxpay435434323FFDuv3
+    #    weChatPayCertFilePath: D:\workspace-mine\13-SkyTakeway\sky-take-out\sky-server\src\main\resources\pem\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
+    #    notifyUrl: https://www.weixin.qq.com/wxpay/pay.php
+    #    refundNotifyUrl: https://www.weixin.qq.com/wxpay/pay.php
