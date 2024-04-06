@@ -4,7 +4,6 @@ import com.sky.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import java.time.LocalDateTime;
 import java.util.Map;
 
 /**
@@ -23,7 +22,7 @@ public interface UserMapper
      * @param map
      * @return
      */
-    Integer countByMap(Map<String, LocalDateTime> map);
+    Integer countByMap(Map<String, Object> map);
 
     /**
      * 根据openid查询用户
