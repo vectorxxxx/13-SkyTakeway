@@ -6,9 +6,21 @@ import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Mapper
 public interface OrderMapper
 {
+    /**
+     * 根据状态和下单时间查询订单
+     *
+     * @param status
+     * @param orderTime
+     */
+    @Select("select * from orders where status = #{status} and order_time < #{orderTime}")
+    List<Orders> getByStatusAndOrdertimeLT(Integer status, LocalDateTime orderTime);
+
     /**
      * 根据状态统计订单数量
      *
@@ -48,10 +60,19 @@ public interface OrderMapper
     Orders getByNumber(String orderNumber);
 
     /**
+     * 根据订单号查询订单
+     *
+     * @param outTradeNo
+     * @param userId
+     * @return {@link Orders}
+     */
+    @Select("select * from orders where number = #{outTradeNo} and user_id = #{userId}")
+    Orders getByNumberAndUserId(String outTradeNo, Long userId);
+
+    /**
      * 修改订单信息
      *
      * @param orders
      */
     void update(Orders orders);
-
 }

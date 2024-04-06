@@ -16,6 +16,13 @@ import com.sky.vo.OrderVO;
 public interface OrderService
 {
     /**
+     * 用户催单
+     *
+     * @param id
+     */
+    void reminder(Long id);
+
+    /**
      * 完成订单
      *
      * @param id
