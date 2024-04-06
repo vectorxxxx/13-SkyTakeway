@@ -16,10 +16,23 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Orders implements Serializable {
+public class Orders implements Serializable
+{
 
     /**
-     * 订单状态 1待付款 2待接单 3已接单 4派送中 5已完成 6已取消
+     * 订单状态
+     * <p>
+     * 1待付款
+     * <p>
+     * 2待接单
+     * <p>
+     * 3已接单
+     * <p>
+     * 4派送中
+     * <p>
+     * 5已完成
+     * <p>
+     * 6已取消
      */
     public static final Integer PENDING_PAYMENT = 1;
     public static final Integer TO_BE_CONFIRMED = 2;
@@ -29,7 +42,13 @@ public class Orders implements Serializable {
     public static final Integer CANCELLED = 6;
 
     /**
-     * 支付状态 0未支付 1已支付 2退款
+     * 支付状态
+     * <p>
+     * 0未支付
+     * <p>
+     * 1已支付
+     * <p>
+     * 2退款
      */
     public static final Integer UN_PAID = 0;
     public static final Integer PAID = 1;
